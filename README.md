@@ -6,10 +6,12 @@ End-to-end deep learning system that predicts Estimated Time of Arrival (ETA) us
 ## ✨ Project Highlights
 
 * 📅**Real-time ETA Prediction** using 5-min interval PEMS-BAY traffic speed data
-* 🧠 **Deep Learning with PyTorch Lightning**: LSTM-based model
-* 🌎 **Production-ready API**: FastAPI + Pydantic + Docker
-* 📊 **Evaluation**: MAE ≈ 0.026 min, RMSE ≈ 0.068 min
-* ⚖️ **Multi-segment Routing**: /predict\_route returns ETA for full route across multiple segments
+* 🧠 Deep Learning with PyTorch Lightning: LSTM-based model
+* 🌎 Production-ready API: FastAPI + Pydantic + Docker
+* 📊 Evaluation: MAE ≈ 0.026 min, RMSE ≈ 0.068 min
+* ⚖️ Multi-segment Routing: /predict_route returns ETA for full route across multiple segments
+* 🛠️ Route Simulation Support: /simulate_trip_eta predicts ETA from real sensor IDs using sensor_speed_map
+* 📊 W&B Integration: Track MAE, RMSE, and prediction curves live
 
 ---
 
@@ -59,13 +61,14 @@ python src/data/make_windows.py
 * Simulates ETA (in minutes) = (1/speed) \* 60
 * Filters outliers (ETA > 30 min)
 
-### 6. Train LSTM Model
+### 6. Train LSTM Model (with W&B logging)
 
 ```bash
 python src/model/train_lstm.py
 ```
 
 * Uses PyTorch Lightning
+* Logs to Weights & Biases (W&B)
 * Saves model to models/lstm\_eta\_model.pth
 
 ### 7. Evaluate on Validation Set
@@ -85,6 +88,7 @@ uvicorn src.api.app:app --reload --reload-dir src
 
 * `/predict` for single sensor
 * `/predict_route` for multi-segment input
+* /simulate_trip_eta for sensor ID-based routing
 
 #### Example:
 
