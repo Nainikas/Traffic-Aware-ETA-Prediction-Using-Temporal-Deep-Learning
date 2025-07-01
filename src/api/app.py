@@ -78,3 +78,36 @@ def predict_route_eta(data: MultiSegmentInput):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Route prediction failed: {str(e)}")
+
+# Import the synthetic sensor_speed_map
+from src.data.sensor_speed_map import sensor_speed_map
+
+# New schema for trip input
+class TripPathInput(BaseModel):
+    route: List[str]  # list of sensor IDs
+@app.post("/simulate_trip_eta")
+def simulate_trip(data: TripPathInput):
+    try:
+        total_eta = 0.0
+        segment_etas = []
+
+        for sensor_id in data.route:
+            speeds = sensor_speed_map.get(sensor_id)
+            if not speeds or len(speeds) < 12:
+                raise HTTPException(status_code=400, detail=f"Sensor {sensor_id} is missing or has insufficient data")
+
+            x = np.array(speeds[:12], dtype=np.float32).reshape(1, 12, 1)
+            x_tensor = torch.tensor(x)
+
+            with torch.no_grad():
+                eta = model(x_tensor).item()
+                segment_etas.append(round(eta, 2))
+                total_eta += eta
+
+        return {
+            "segment_etas": segment_etas,
+            "total_eta": round(total_eta, 2)
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Trip simulation failed: {str(e)}")
