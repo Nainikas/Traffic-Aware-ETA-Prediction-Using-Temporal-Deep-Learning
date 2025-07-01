@@ -46,7 +46,7 @@ python src/data/clean_pems.py
 * Replaces 0 with NaN, interpolates
 * Normalizes speed data (optional)
 
-Data Note
+Data Note:
 To save GitHub storage, `data/cleaned_pems_bay.csv` is not included.
 
 ### 5. Create Model Input Windows
