@@ -131,7 +131,7 @@ docker run -p 8000:8000 eta-api
 ## Deployment
 
 * Hugging Face Spaces (via Docker image)
-
+[Nainikas/Traffic-Aware-ETA-Prediction-Using-Temporal-Deep-Learning](https://huggingface.co/spaces/Nainikas/Traffic-Aware-ETA-Prediction-Using-Temporal-Deep-Learning)
 ---
 
 ## Evaluation Metrics
