@@ -69,6 +69,7 @@ python src/model/train_lstm.py
 
 * Uses PyTorch Lightning
 * Logs to Weights & Biases (W&B)
+    https://wandb.ai/nainikas-california-state-university-northridge/Traffic-Aware-ETA-Prediction-Using-Temporal-Deep-Learning?nw=nwusernainikas
 * Saves model to models/lstm\_eta\_model.pth
 
 ### 7. Evaluate on Validation Set
