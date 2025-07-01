@@ -47,14 +47,7 @@ python src/data/clean_pems.py
 * Normalizes speed data (optional)
 
 Data Note
-
 To save GitHub storage, `data/cleaned_pems_bay.csv` is not included.
-
-You can generate it by running:
-
-```bash
-python src/data/clean_pems.py
-```
 
 ### 5. Create Model Input Windows
 
