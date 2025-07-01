@@ -1,0 +1,44 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.npy
+*.npz
+
+# Jupyter/IPython
+*.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+.venv/
+
+# Logs and reports
+*.log
+*.out
+*.err
+
+# Environment variables
+.env
+*.env
+
+# Datasets and generated files
+# Ignore data/ except PEMS-BAY
+data/*
+!data/pems-bay.h5
+
+# Ignore models/ except trained model
+models/*
+!models/lstm_eta_model.pth
+# Ignore outputs/ except plots
+outputs/
+
+# IDE/editor folders
+.vscode/
+.idea/
+.DS_Store
+
+# OS-specific
+Thumbs.db
+ehthumbs.db

@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+torch
+pytorch-lightning
+fastapi
+uvicorn
+tqdm
+geopy
+h5py
+tables
