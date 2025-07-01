@@ -24,9 +24,17 @@ venv/
 *.env
 
 # Datasets and generated files
-# Ignore data/ except PEMS-BAY
 data/*
-!data/pems-bay.h5
+!data/lstm_dataset.csv
+!data/lstm_dataset.npz
+!data/predictions.npz
+
+# Explicitly ignore large files (redundant but clear)
+data/cleaned_pems_bay.csv
+data/pems-bay.h5
+
+
+
 
 # Ignore models/ except trained model
 models/*
