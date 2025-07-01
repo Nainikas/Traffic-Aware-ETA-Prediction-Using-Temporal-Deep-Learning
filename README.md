@@ -46,6 +46,9 @@ python src/data/clean_pems.py
 * Replaces 0 with NaN, interpolates
 * Normalizes speed data (optional)
 
+Data Note:
+To save GitHub storage, `data/cleaned_pems_bay.csv` is not included.
+
 ### 5. Create Model Input Windows
 
 ```bash
@@ -128,7 +131,7 @@ docker run -p 8000:8000 eta-api
 ## Deployment
 
 * Hugging Face Spaces (via Docker image)
-
+[Nainikas/Traffic-Aware-ETA-Prediction-Using-Temporal-Deep-Learning](https://huggingface.co/spaces/Nainikas/Traffic-Aware-ETA-Prediction-Using-Temporal-Deep-Learning)
 ---
 
 ## Evaluation Metrics
@@ -154,9 +157,13 @@ RMSE: 0.068 minutes
   ![Screenshot 2025-07-01 013617](https://github.com/user-attachments/assets/e51787f8-bc91-4a83-8a84-5efd786884da)
 
 * Route ETA JSON input/output
+    * Predict ETA
   ![Screenshot 2025-06-30 234911](https://github.com/user-attachments/assets/cd0dafda-87ed-46fc-9fa2-663d87fe2c0b)
-
+    * Predict Route ETA
   ![Screenshot 2025-07-01 012127](https://github.com/user-attachments/assets/351af1d2-68f1-4201-aa83-7a359e4b0595)
+    * Simulate Trip ETA
+  ![image](https://github.com/user-attachments/assets/d4b3256a-70d1-4e3c-8d49-37c0e4d9b832)
+
 
 * Graphs from eval\_lstm.py
   ![image](https://github.com/user-attachments/assets/cb6862f9-49e5-45cf-b848-016f2b58c2a6)
