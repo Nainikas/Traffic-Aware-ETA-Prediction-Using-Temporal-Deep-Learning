@@ -151,8 +151,15 @@ RMSE: 0.068 minutes
 ## Screenshots 
 
 * Swagger UI (/docs)
+  ![Screenshot 2025-07-01 013617](https://github.com/user-attachments/assets/e51787f8-bc91-4a83-8a84-5efd786884da)
+
 * Route ETA JSON input/output
+  ![Screenshot 2025-06-30 234911](https://github.com/user-attachments/assets/cd0dafda-87ed-46fc-9fa2-663d87fe2c0b)
+
+  ![Screenshot 2025-07-01 012127](https://github.com/user-attachments/assets/351af1d2-68f1-4201-aa83-7a359e4b0595)
+
 * Graphs from eval\_lstm.py
+  ![image](https://github.com/user-attachments/assets/cb6862f9-49e5-45cf-b848-016f2b58c2a6)
 
 ---
 
