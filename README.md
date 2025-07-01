@@ -89,7 +89,7 @@ uvicorn src.api.app:app --reload --reload-dir src
 
 * `/predict` for single sensor
 * `/predict_route` for multi-segment input
-* /simulate_trip_eta for sensor ID-based routing
+* `/simulate_trip_eta` for sensor ID-based routing
 
 #### Example:
 
